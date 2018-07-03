@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>ss-qrcode</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript" src="qrcode.min.js"></script>
+    </head>
+    <body>
+        {% for ics in icss %}
+        <div id={{ics['summary']}} align=center>
+            <h3>{{ics['summary']}}</h3>
+            <p>{{ics['start_date']}}:{{ics['start_time']}}({{ics['start_tz']}}) -- {{ics['end_date']}}:{{ics['end_time']}}({{ics['end_tz']}})</p>
+            <p><a href="{{ics['path']}}">Apply</a></p>
+            <p><a href="{{ics['url']}}">Related Link</a></p>
+            <p>{{ics['description']}}</p>
+        </div>
+        <hr/>
+        {% endfor %}
+    </body>
+</html>
+
+
