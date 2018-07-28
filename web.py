@@ -27,7 +27,8 @@ def index():
     }
     return render_template(**html_items)
 
-os.system('rm ./templates/ics/*ics')
+# os.system('rm ./templates/ics/*ics')
 
-port = 1235
+print(get_ics())
+port = 1236
 app.run(host='::', port=port, debug=True)
